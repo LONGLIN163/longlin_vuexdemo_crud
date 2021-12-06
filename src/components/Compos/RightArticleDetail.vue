@@ -1,6 +1,6 @@
 <template>
     <div>
-        mid
+        right
     </div>
 </template>
 
