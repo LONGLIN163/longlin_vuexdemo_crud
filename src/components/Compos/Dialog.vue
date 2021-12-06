@@ -45,8 +45,7 @@
 
         <div slot="footer" class="dialog-footer">
             <el-button @click="toggleDialogForm">Cancel</el-button>
-            <el-button v-show="formMode===''" type="primary" @click="createArticle(form)">Create</el-button>
-            <el-button v-show="formMode==='edit'" type="primary" @click="updateArticle(form)">Update</el-button>
+            <el-button v-show="formMode===''" type="primary" @click="createArticleAction(form)">Create</el-button>
         </div>
 
     </el-dialog>
@@ -54,7 +53,7 @@
 
 <script>
     import store  from '@/vuex/store'
-    import {mapState,mapMutations} from 'vuex'
+    import {mapState,mapMutations,mapActions} from 'vuex'
 
     export default {
         data(){
@@ -67,7 +66,9 @@
           ...mapState(['articleList','dialogFormVisible'])
         },
         methods: {
-          ...mapMutations(['toggleDialogForm','createArticle','updateArticle']),
+          ...mapMutations(['toggleDialogForm']),
+          ...mapActions(['createArticleAction'])
+
         },
         store
     }

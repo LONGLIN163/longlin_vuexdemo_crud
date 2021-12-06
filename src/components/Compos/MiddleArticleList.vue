@@ -39,9 +39,6 @@
           <template slot-scope="scope">
             <el-button
               size="mini"
-              @click="editArticle(scope.row)">Edit</el-button>
-            <el-button
-              size="mini"
               type="danger"
               @click="delArticle(scope.row.id)"
               >Delete</el-button>
@@ -96,10 +93,8 @@
           editArticle(targetArticle) {
             console.log("targetArticle---",targetArticle)
             this.formMode="edit"
-            //this.dialogFormVisible = true
             this.toggleDialogForm();
             this.form=JSON.parse(JSON.stringify(targetArticle))
-            //console.log("form---",this.form)
           },
           setCurrent(row) {
             this.$refs.singleTable.setCurrentRow(row);
@@ -110,7 +105,7 @@
             this.showSelectArticle(val)
           },
           ...mapMutations(['getAlData','delArticle','showSelectArticle','toggleDialogForm']),
-          //...mapActions(['setAlAction'])
+          ...mapActions(['setAlAction'])
         },
         created(){
           //this.setAlAction()

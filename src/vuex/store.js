@@ -31,6 +31,7 @@ const store = new Vuex.Store({
     getAlData:(state,payload)=>{
       state.articleList=payload
       console.log("init List---",state.articleList)
+      state.filteredList=state.articleList
     },
     getListByType:(state,typeString)=>{
       state.filteredList=state.articleList.filter((item) => {
@@ -51,20 +52,6 @@ const store = new Vuex.Store({
       state.previewedProduct=val
       console.log("After select an item---",state.previewedProduct)
     },
-    createArticle:(state,formobj)=>{
-      const newId=state.articleList.reduce((p,v) => p.id < v.id ? v : p).id
-      const newArticle={
-        ...formobj,
-        id:newId+1
-      }
-      state.articleList.push(newArticle)
-      console.log("After createArticle List---",state.articleList)
-    },
-    updateArticle:(state,updatedArticle)=>{
-      let foundIndex = state.articleList.findIndex(x => x.id == updatedArticle.id);
-      state.articleList[foundIndex] = updatedArticle;
-      console.log("After updateArticle List---",state.articleList)
-    },
     toggleDialogForm:(state)=>{
       state.dialogFormVisible=!state.dialogFormVisible
     }
@@ -77,17 +64,31 @@ const store = new Vuex.Store({
             method:"GET",
         }).then(res=>{
             if(res.status==200){
-              //console.log("data***",res.data.data) 
               const objArr=JSONPath({
                 json:res.data.data,
                 path:'$..[?(@.isFruit&&@.name)]'
               })
+               console.log("setAlAction***",objArr)
                commit('getAlData',objArr) 
-
             }
         }).catch(err=>{
             console.log(err)
         })
+    },
+
+    createArticleAction: ({dispatch},postArticleObj) => {
+      axios({
+        url:apiUrl,
+        method:"POST",
+        data:postArticleObj,
+      }).then(res=>{
+          console.log("post res***",res)
+          if(res.status==201){
+            dispatch('setAlAction')
+          }
+      }).catch(err=>{
+          console.log(err)
+      })
     }
   }
 })
