@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <!-- <leftNav></leftNav> -->
-    <!-- <LeftCatalog></LeftCatalog> -->
     <div class="main"> 
       <router-view/>
     </div>
@@ -9,7 +7,6 @@
 </template>
 
 <script>
-    //import LeftCatalog from "@/components/Compos/LeftCatalog.vue"
     export default {
 
     }

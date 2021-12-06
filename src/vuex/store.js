@@ -11,6 +11,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     articleList: [],
+    filteredList:[],
     previewedProduct:{
       id: 0,
       name: '',
@@ -23,7 +24,7 @@ const store = new Vuex.Store({
       price: ''
     },
     dialogFormVisible:false,
-    //formMode:''
+    types:["Practical","Incredible","Licensed","Refined","Intelligent","Handmade"]
   },
   //ArticleList=Al
   mutations: {
@@ -31,9 +32,16 @@ const store = new Vuex.Store({
       state.articleList=payload
       console.log("init List---",state.articleList)
     },
-    delArticle:(state,aId)=>{
+    getListByType:(state,typeString)=>{
+      console.log("filter List---",typeString)
+      state.filteredList=state.articleList.filter((item) => {
+        return item.taste===typeString
+      })
+      console.log("filter List---",state.filteredList)
+    },
+    delArticle:(state,deletedId)=>{
       state.articleList=state.articleList.filter((item)=>{
-        return item.articleId!==aId
+        return item.id!==deletedId
       })
       console.log("After delArticle List---",state.articleList)
     },

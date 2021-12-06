@@ -2,7 +2,7 @@
   <el-container>
     <el-main>
       <el-table
-        :data="articleList.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
+        :data="filteredList.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
         highlight-current-row
         @current-change="handleCurrentChange"
         :default-sort = "{prop: 'articleId', order: 'descending'}"
@@ -43,7 +43,7 @@
             <el-button
               size="mini"
               type="danger"
-              @click="delArticle(scope.row.articleId)"
+              @click="delArticle(scope.row.id)"
               >Delete</el-button>
           </template>
           
@@ -90,7 +90,7 @@
           Dialog
         },
         computed:{
-          ...mapState(['articleList','dialogFormVisible'])
+          ...mapState(['articleList','dialogFormVisible','filteredList'])
         },
         methods: {
           editArticle(targetArticle) {

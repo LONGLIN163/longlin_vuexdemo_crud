@@ -1,21 +1,38 @@
 <template>
     <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-        <el-menu :default-openeds="['1', '3']">
-          <el-submenu index="2">
-            <template slot="title"><i class="el-icon-menu"></i>Cat</template>
-            <el-menu-item-group>
-              <template slot="title">group by...</template>
-              <el-menu-item index="2-1">type1</el-menu-item>
-              <el-menu-item index="2-2">type2</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-        </el-menu>
+      <el-menu 
+        :default-active="activeIndex" 
+        class="el-menu-demo" 
+        mode="vertical" 
+        @select="handleSelect"
+      >
+          <el-menu-item index='0' :key="0">All</el-menu-item>
+          <el-menu-item v-for="(item,index) in types" :index="(index+1).toString()" :key="item+index">{{item}}</el-menu-item>
+      </el-menu>
     </el-aside>
 </template>
 
 <script>
+    import store  from '@/vuex/store'
+    import {mapState,mapMutations} from 'vuex'
     export default {
-        
+        data() {
+          return {
+            activeIndex:'0'
+          }
+        },
+        computed:{
+          ...mapState(['types'])
+        },
+        methods:{
+
+        handleSelect(key) {
+          //console.log("key---",key);
+          this.getListByType(this.types[key-1])
+        },
+          ...mapMutations(['getListByType'])
+        },
+        store
     }
 </script>
 
