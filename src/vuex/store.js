@@ -33,11 +33,13 @@ const store = new Vuex.Store({
       console.log("init List---",state.articleList)
     },
     getListByType:(state,typeString)=>{
-      console.log("filter List---",typeString)
       state.filteredList=state.articleList.filter((item) => {
         return item.taste===typeString
       })
       console.log("filter List---",state.filteredList)
+    },
+    resetFilteredList:(state)=>{
+      state.filteredList=state.articleList
     },
     delArticle:(state,deletedId)=>{
       state.articleList=state.articleList.filter((item)=>{

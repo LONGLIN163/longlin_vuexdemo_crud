@@ -14,7 +14,7 @@
 
 <script>
     import store  from '@/vuex/store'
-    import {mapState,mapMutations} from 'vuex'
+    import {mapState,mapMutations,mapActions} from 'vuex'
     export default {
         data() {
           return {
@@ -24,13 +24,20 @@
         computed:{
           ...mapState(['types'])
         },
-        methods:{
-
-        handleSelect(key) {
-          //console.log("key---",key);
-          this.getListByType(this.types[key-1])
+        created(){
+          this.setAlAction()
         },
-          ...mapMutations(['getListByType'])
+        methods:{
+        handleSelect(key) {
+          console.log("key---",key);
+          if(key==='0'){
+            this.resetFilteredList()
+          }else{
+            this.getListByType(this.types[key-1])
+          }
+        },
+          ...mapMutations(['getListByType','resetFilteredList']),
+          ...mapActions(['setAlAction'])
         },
         store
     }

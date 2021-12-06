@@ -110,10 +110,10 @@
             this.showSelectArticle(val)
           },
           ...mapMutations(['getAlData','delArticle','showSelectArticle','toggleDialogForm']),
-          ...mapActions(['setAlAction'])
+          //...mapActions(['setAlAction'])
         },
         created(){
-          this.setAlAction()
+          //this.setAlAction()
         },
         store
     }
