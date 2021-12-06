@@ -1,5 +1,5 @@
 <template>
-    <el-dialog title="product info" :visible="dialogFormVisible">
+    <el-dialog title="product info" :visible="dialogFormVisible" @close='toggleDialogForm'>
 
         <el-form :model="form">
 
@@ -28,10 +28,6 @@
             <el-form-item label="image" :label-width="formLabelWidth">
                 <el-input v-model="form.image" autocomplete="off"></el-input>
             </el-form-item>
-
-            <!-- <el-form-item label="isFruit" :label-width="formLabelWidth">
-                <el-input v-model="form.isFruit" autocomplete="off"></el-input>
-            </el-form-item> -->
 
             <el-form-item label="expires" :label-width="formLabelWidth">
                 <el-input v-model="form.expires" autocomplete="off"></el-input>
@@ -68,7 +64,6 @@
         methods: {
           ...mapMutations(['toggleDialogForm']),
           ...mapActions(['createArticleAction'])
-
         },
         store
     }

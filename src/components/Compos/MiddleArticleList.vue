@@ -5,7 +5,7 @@
         :data="filteredList.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
         highlight-current-row
         @current-change="handleCurrentChange"
-        :default-sort = "{prop: 'articleId', order: 'descending'}"
+        :default-sort = "{prop: 'id', order: 'descending'}"
         height="500"
         style="width: 100%">
 
@@ -29,11 +29,11 @@
 
         <el-table-column
           align="right">
-          <template slot="header">
+          <template slot="header" slot-scope="scope">
             <el-input
               v-model="search"
               size="mini"
-              placeholder="search"/>
+              placeholder="search..."/>
           </template>
 
           <template slot-scope="scope">
@@ -90,12 +90,6 @@
           ...mapState(['articleList','dialogFormVisible','filteredList'])
         },
         methods: {
-          editArticle(targetArticle) {
-            console.log("targetArticle---",targetArticle)
-            this.formMode="edit"
-            this.toggleDialogForm();
-            this.form=JSON.parse(JSON.stringify(targetArticle))
-          },
           setCurrent(row) {
             this.$refs.singleTable.setCurrentRow(row);
           },
@@ -104,7 +98,7 @@
             this.currentRow = val;
             this.showSelectArticle(val)
           },
-          ...mapMutations(['getAlData','delArticle','showSelectArticle','toggleDialogForm']),
+          ...mapMutations(['delArticle','showSelectArticle','toggleDialogForm']),
           ...mapActions(['setAlAction'])
         },
         created(){
