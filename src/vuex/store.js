@@ -51,6 +51,8 @@ const store = new Vuex.Store({
       console.log("After createArticle List---",state.articleList)
     },
     updateArticle:(state,updatedArticle)=>{
+      let foundIndex = state.articleList.findIndex(x => x.id == updatedArticle.id);
+      state.articleList[foundIndex] = updatedArticle;
       console.log("After updateArticle List---",state.articleList)
     },
     toggleDialogForm:(state)=>{
