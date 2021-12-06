@@ -12,11 +12,18 @@ const store = new Vuex.Store({
   state: {
     articleList: [],
     previewedProduct:{
-      id: 1,
-      name: "haha",
-      price: 18
+      id: 0,
+      name: '',
+      description: '',
+      taste: '',
+      color: '',
+      image: '',
+      isFruit: true,
+      expires: '',
+      price: ''
     },
     dialogFormVisible:false,
+    //formMode:''
   },
   //ArticleList=Al
   mutations: {
@@ -35,10 +42,10 @@ const store = new Vuex.Store({
       console.log("After select an item---",state.previewedProduct)
     },
     createArticle:(state,formobj)=>{
-      const newId=state.articleList.reduce((p,v) => p.articleId < v.articleId ? v : p).articleId
+      const newId=state.articleList.reduce((p,v) => p.id < v.id ? v : p).id
       const newArticle={
         ...formobj,
-        articleId:newId+1
+        id:newId+1
       }
       state.articleList.push(newArticle)
       console.log("After createArticle List---",state.articleList)

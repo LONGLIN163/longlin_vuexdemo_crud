@@ -72,9 +72,15 @@
     export default {
         data() {
           return {
-            formMode:'',
+            formMode:'', 
             form: {
-                articleName: '',
+                name: '',
+                description: '',
+                taste: '',
+                color: '',
+                image: '',
+                isFruit: true,
+                expires: '',
                 price: ''
             },
             search: ''
@@ -103,7 +109,7 @@
             this.currentRow = val;
             this.showSelectArticle(val)
           },
-          ...mapMutations(['getAlData','delArticle','showSelectArticle','createArticle','toggleDialogForm']),
+          ...mapMutations(['getAlData','delArticle','showSelectArticle','toggleDialogForm']),
           ...mapActions(['setAlAction'])
         },
         created(){
