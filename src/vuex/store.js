@@ -3,6 +3,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 //import Apis from '@/apis/api.js'
 import axios from "axios"
+import JSONPath from "JSONPath"
 let apiUrl="http://localhost:3000/fruit";
 
 Vue.use(Vuex)
@@ -10,6 +11,12 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     articleList: [],
+    previewedProduct:{
+      id: 1,
+      name: "haha",
+      price: 18
+    },
+    dialogFormVisible:false,
   },
   //ArticleList=Al
   mutations: {
@@ -17,7 +24,31 @@ const store = new Vuex.Store({
       state.articleList=payload
       console.log("init List---",state.articleList)
     },
-
+    delArticle:(state,aId)=>{
+      state.articleList=state.articleList.filter((item)=>{
+        return item.articleId!==aId
+      })
+      console.log("After delArticle List---",state.articleList)
+    },
+    showSelectArticle:(state,val)=>{
+      state.previewedProduct=val
+      console.log("After select an item---",state.previewedProduct)
+    },
+    createArticle:(state,formobj)=>{
+      const newId=state.articleList.reduce((p,v) => p.articleId < v.articleId ? v : p).articleId
+      const newArticle={
+        ...formobj,
+        articleId:newId+1
+      }
+      state.articleList.push(newArticle)
+      console.log("After createArticle List---",state.articleList)
+    },
+    updateArticle:(state,updatedArticle)=>{
+      console.log("After updateArticle List---",state.articleList)
+    },
+    toggleDialogForm:(state)=>{
+      state.dialogFormVisible=!state.dialogFormVisible
+    }
   },
   actions:{
 
@@ -32,7 +63,6 @@ const store = new Vuex.Store({
                 json:res.data.data,
                 path:'$..[?(@.isFruit&&@.name)]'
               })
-               //console.log("objArr***",objArr)
                commit('getAlData',objArr) 
 
             }

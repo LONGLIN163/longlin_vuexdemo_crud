@@ -1,8 +1,12 @@
 <template>
   <div>
-      <LeftCatalog></LeftCatalog>
-      <MiddleArticleList></MiddleArticleList>
-      <RightArticleDetail></RightArticleDetail>
+    <el-container style="border: 1px solid #eee">
+
+        <LeftCatalog></LeftCatalog>
+        <MiddleArticleList></MiddleArticleList>
+        <RightArticleDetail></RightArticleDetail>
+
+    </el-container>
   </div>
 </template>
 
