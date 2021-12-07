@@ -161,11 +161,10 @@
 <style scoped>
 
   .demo-table-expand-left {
-    font-size: 0;
+    padding-left: 50px;
   }
 
   .demo-table-expand-right {
-    font-size: 0;
     padding-left: 50px;
     border-left: 1px dashed #99a9bf;
   }
@@ -177,7 +176,7 @@
   .demo-table-expand-left .el-form-item {
     margin-right: 0;
     margin-bottom: 0;
-    width: 50%;
+    width: 100%;
   }
 
 </style>
