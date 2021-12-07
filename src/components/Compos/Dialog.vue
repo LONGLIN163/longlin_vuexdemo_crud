@@ -19,7 +19,7 @@
 
 
             <el-form-item label="taste" :label-width="formLabelWidth">
-                <el-select v-model="form.value" placeholder="please select" style="width: 100%;">
+                <el-select v-model="form.taste" placeholder="please select" style="width: 100%;">
                     <el-option
                     v-for="item in types"
                     :key="item"
@@ -42,9 +42,6 @@
                 <el-input v-model="form.image" autocomplete="off"></el-input>
             </el-form-item>
 
-            <!-- <el-form-item label="expires" :label-width="formLabelWidth">
-                <el-input v-model="form.expires" autocomplete="off"></el-input>
-            </el-form-item> -->
 
             <el-form-item label="expires" :label-width="formLabelWidth">
                 

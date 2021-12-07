@@ -1,9 +1,9 @@
 <template>
-    <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+    <el-aside width="200px" style="background-color: rgb(238, 241, 246)" v-if="!reFresh">
       <el-menu 
-        :default-active="activeIndex" 
+        :default-active="activeType" 
         class="el-menu-demo" 
-        mode="vertical" 
+        mode="vertical"
         @select="handleSelect"
       >
           <el-menu-item index='0' :key="0">All</el-menu-item>
@@ -18,26 +18,52 @@
     export default {
         data() {
           return {
-            activeIndex:'0'
+            activeType:'0',
+            //reFresh:true,
+            menuTree:[]
           }
         },
         computed:{
-          ...mapState(['types'])
+          ...mapState(['types','reFresh'])
         },
         created(){
-          this.setAlAction()
+          this.setArticleListlAction()
         },
-        methods:{
-        handleSelect(key) {
-          console.log("key---",key);
-          if(key==='0'){
-            this.resetFilteredList()
-          }else{
-            this.getListByType(this.types[key-1])
+        watch:{
+            //  menuTree(){
+ 
+            //       this.reFresh= false
+            //       this.$nextTick(()=>{
+                    
+            //         this.reFresh = true
+            //     })
+            // }
+          'reFresh':function(newVal,oldVal){
+            console.log('newVal****',newVal)
+            console.log('oldVal****',oldVal)
+            if(newVal){
+              this.ToogleRefreshCompo(true)          
+              this.$nextTick(()=>{   
+                 this.ToogleRefreshCompo(false)   
+              })
+            }
           }
         },
-          ...mapMutations(['getListByType','resetFilteredList']),
-          ...mapActions(['setAlAction'])
+        methods:{
+          handleSelect(key) {
+            console.log("key---",key);
+            if(key==='0'){
+              this.resetFilteredList()
+            }else{
+              this.getListByType(this.types[key-1])
+            }
+          },
+          // reload() {
+          //   console.log("update*************")
+          //   this.$forceUpdate()
+          // },
+          ...mapMutations(['getListByType','resetFilteredList','ToogleRefreshCompo']),
+          ...mapActions(['setArticleListlAction'])
         },
         store
     }

@@ -12,26 +12,22 @@ const store = new Vuex.Store({
   state: {
     articleList: [],
     filteredList:[],
-    previewedProduct:{
-      id: 0,
-      name: '',
-      description: '',
-      taste: '',
-      color: '',
-      image: '',
-      isFruit: true,
-      expires: '',
-      price: ''
-    },
     dialogFormVisible:false,
-    types:["Practical","Incredible","Licensed","Refined","Intelligent","Handmade"]
+    types:[],
+    reFresh:false
   },
-  //ArticleList=Al
   mutations: {
-    getAlData:(state,payload)=>{
+    getArticleList:(state,payload)=>{
       state.articleList=payload
       console.log("init List---",state.articleList)
       state.filteredList=state.articleList
+    },
+    getTypes:(state)=>{
+      state.types=Array.from(new Set(state.articleList.map(a => a.taste)));
+      console.log("getTypes---",state.types)
+    },
+    ToogleRefreshCompo:(state,refreshStatus)=>{
+      state.reFresh=refreshStatus;
     },
     getListByType:(state,typeString)=>{
       state.filteredList=state.articleList.filter((item) => {
@@ -41,12 +37,6 @@ const store = new Vuex.Store({
     },
     resetFilteredList:(state)=>{
       state.filteredList=state.articleList
-    },
-    delArticle:(state,deletedId)=>{
-      state.articleList=state.articleList.filter((item)=>{
-        return item.id!==deletedId
-      })
-      console.log("After delArticle List---",state.articleList)
     },
     showSelectArticle:(state,val)=>{
       state.previewedProduct=val
@@ -58,7 +48,7 @@ const store = new Vuex.Store({
   },
   actions:{
 
-    setAlAction:({commit})=>{
+    setArticleListlAction:({commit})=>{
         axios({
             url:apiUrl,
             method:"GET",
@@ -68,8 +58,9 @@ const store = new Vuex.Store({
                 json:res.data.data,
                 path:'$..[?(@.isFruit&&@.name)]'
               })
-               console.log("setAlAction***",objArr)
-               commit('getAlData',objArr) 
+               console.log("setArticleListlAction***",objArr)
+               commit('getArticleList',objArr) 
+               commit('getTypes') 
             }
         }).catch(err=>{
             console.log(err)
@@ -84,26 +75,28 @@ const store = new Vuex.Store({
       }).then(res=>{
           console.log("POST res***",res)
           if(res.status==201){
-            dispatch('setAlAction')
+            dispatch('setArticleListlAction')
           }
       }).catch(err=>{
           console.log(err)
       })
     },
 
-    delArticleAction: ({dispatch},id) => {
+    delArticleAction: ({dispatch,commit},id) => {
       axios({
         url:apiUrl+'/'+id,
         method:"DELETE",
       }).then(res=>{
           console.log("DELETE res***",res)
           if(res.status==200){
-            dispatch('setAlAction')
+            dispatch('setArticleListlAction')
+            commit('ToogleRefreshCompo',true)
           }
       }).catch(err=>{
           console.log(err)
       })
-    }
+    },
+
   }
 })
 

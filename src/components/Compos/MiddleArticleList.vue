@@ -2,7 +2,7 @@
   <el-container>
     <el-main>
       <el-table
-        :data="articleList.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
+        :data="filteredList.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
         :default-sort = "{prop: 'id', order: 'descending'}"
         style="width: 100%">
         <el-table-column type="expand">
@@ -68,6 +68,11 @@
           label="Name"
           sortable
           prop="name">
+        </el-table-column>
+        <el-table-column
+          label="Taste"
+          sortable
+          prop="taste">
         </el-table-column>
         <el-table-column
           label="Expires date"
@@ -149,10 +154,7 @@
             this.showSelectArticle(val)
           },
           ...mapMutations(['showSelectArticle','toggleDialogForm']),
-          ...mapActions(['setAlAction','delArticleAction'])
-        },
-        created(){
-          this.setAlAction()
+          ...mapActions(['setArticleListlAction','delArticleAction'])
         },
         store
     }

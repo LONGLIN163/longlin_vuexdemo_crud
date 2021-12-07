@@ -1,11 +1,11 @@
 <template>
   <div>
     <el-container style="border: 1px solid #eee">
-
-        <!-- <LeftCatalog></LeftCatalog> -->
-        <MiddleArticleList></MiddleArticleList>
-        <!-- <RightArticleDetail></RightArticleDetail> -->
-
+        <el-header>longlin_vuexdemo_CR(no U)D</el-header>
+        <el-container>
+          <LeftCatalog></LeftCatalog>
+          <MiddleArticleList></MiddleArticleList>
+        </el-container>
     </el-container>
   </div>
 </template>
@@ -14,23 +14,27 @@
 
   import LeftCatalog from '@/components/Compos/LeftCatalog'
   import MiddleArticleList from '@/components/Compos/MiddleArticleList'
-  import RightArticleDetail from '@/components/Compos/RightArticleDetail'
 
     export default {
       data() {
         return  {
           msg:"vuex:"
-      }
+        }
       },
       components:{
         LeftCatalog,
         MiddleArticleList,
-        RightArticleDetail
       }
     }
 
 </script>
 
 <style scoped>
+  .el-header, .el-footer {
+    background-color: #1c9797;
+    color: #fff;
+    text-align: center;
+    line-height: 60px;
+  }
 
 </style>
