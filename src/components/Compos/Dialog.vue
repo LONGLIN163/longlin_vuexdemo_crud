@@ -5,12 +5,12 @@
 
             <h1 id="productinfo">Product info</h1>
 
-            <el-form-item v-if="formMode==='edit'" label="id" :label-width="formLabelWidth">
+            <!-- <el-form-item v-if="formMode==='edit'" label="id" :label-width="formLabelWidth">
                 <el-input v-model="form.id" autocomplete="off" disabled></el-input>
-            </el-form-item>
+            </el-form-item> -->
 
             <el-form-item label="name" :label-width="formLabelWidth">
-                <el-input v-model="form.name" autocomplete="off"></el-input>
+                <el-input id="aname" v-model="form.name" autocomplete="off"></el-input>
             </el-form-item>
 
             <el-form-item label="description" :label-width="formLabelWidth">
@@ -62,8 +62,8 @@
         </el-form>
 
         <div slot="footer" class="dialog-footer">
-            <el-button @click="toggleDialogForm">Cancel</el-button>
-            <el-button v-show="formMode===''" type="primary" @click="handleCreate(form)">Create</el-button>
+            <el-button id="cancelCreateBtn" @click="toggleDialogForm">Cancel</el-button>
+            <el-button id="createArticleBtn" v-show="formMode===''" type="primary" @click="handleCreate(form)">Create</el-button>
         </div>
 
     </el-dialog>

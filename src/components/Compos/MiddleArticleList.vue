@@ -4,7 +4,8 @@
       <el-table
         :data="filteredList.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
         :default-sort = "{prop: 'id', order: 'descending'}"
-        style="width: 100%">
+        style="width: 100%"
+      >
         <el-table-column type="expand">
           <template slot-scope="props">
           <el-row :gutter="20">
@@ -66,6 +67,8 @@
         </el-table-column>
         <el-table-column
           label="Name"
+          title='name'
+          id='name'
           sortable
           prop="name">
         </el-table-column>
