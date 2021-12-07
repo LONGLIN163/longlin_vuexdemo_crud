@@ -8,7 +8,8 @@ import ElementUI from "element-ui"
 const localVue = createLocalVue();
 localVue.use(ElementUI);
 
-describe('All components should be rendered:', () => {
+ // test components rendering
+describe('All components should be rendered inside Admin page:', () => {
 
   const wrapper = mount(Admin,{
     localVue,

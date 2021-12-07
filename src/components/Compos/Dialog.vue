@@ -1,9 +1,9 @@
 <template>
-    <el-dialog title="product info" :visible="dialogFormVisible" @close='toggleDialogForm'>
+    <el-dialog :visible="dialogFormVisible" @close='toggleDialogForm'>
 
         <el-form :model="form">
 
-            <h1>{{formMode}}</h1>
+            <h1 id="productinfo">Product info</h1>
 
             <el-form-item v-if="formMode==='edit'" label="id" :label-width="formLabelWidth">
                 <el-input v-model="form.id" autocomplete="off" disabled></el-input>
