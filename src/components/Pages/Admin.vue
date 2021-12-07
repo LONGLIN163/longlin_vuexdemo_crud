@@ -2,9 +2,9 @@
   <div>
     <el-container style="border: 1px solid #eee">
 
-        <LeftCatalog></LeftCatalog>
+        <!-- <LeftCatalog></LeftCatalog> -->
         <MiddleArticleList></MiddleArticleList>
-        <RightArticleDetail></RightArticleDetail>
+        <!-- <RightArticleDetail></RightArticleDetail> -->
 
     </el-container>
   </div>

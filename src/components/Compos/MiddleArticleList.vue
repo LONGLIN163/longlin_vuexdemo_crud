@@ -2,33 +2,85 @@
   <el-container>
     <el-main>
       <el-table
-        :data="filteredList.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
-        highlight-current-row
-        @current-change="handleCurrentChange"
+        :data="articleList.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
         :default-sort = "{prop: 'id', order: 'descending'}"
-        height="500"
         style="width: 100%">
+        <el-table-column type="expand">
+          <template slot-scope="props">
+          <el-row :gutter="20">
+            <el-col :span="12">
+              <div class="grid-content bg-purple">
+                <el-form label-position="left" inline class="demo-table-expand-left" >
+                  <el-form-item label="ID:">
+                    <span>{{ props.row.id }}</span>
+                  </el-form-item>
+                  <el-form-item label="Name:">
+                    <span>{{ props.row.name }}</span>
+                  </el-form-item>
+                  <el-form-item label="Taste:">
+                    <span>{{ props.row.taste }}</span>
+                  </el-form-item>
+                  <el-form-item label="Color:">
+                    <span>{{ props.row.color }}</span>
+                  </el-form-item>
+                  <el-form-item label="Expires date:">
+                    <span>{{ props.row.expires }}</span>
+                  </el-form-item>
+                  <el-form-item label="Price:">
+                    <span>{{ props.row.price }}</span>
+                  </el-form-item>
+
+                 <el-button 
+                    size="mini" 
+                    type="danger" 
+                    @click="delArticleAction(props.row.id)"
+                  >Delete</el-button>
+
+                </el-form>
+              </div>
+            </el-col>
+            <el-col :span="12">
+              <div class="grid-content bg-purple">
+                <el-form label-position="left" inline class="demo-table-expand-right" >
+                  <el-form-item label="Image:">
+                    <span>
+                      <el-image 
+                        style="width: 400px;"
+                        :src="props.row.image"
+                      ></el-image>
+                    </span>
+                  </el-form-item>
+                </el-form>
+              </div>
+            </el-col>
+          </el-row>
+
+
+          </template>
+        </el-table-column>
 
         <el-table-column
-          label="id"
+          label="Article ID"
           sortable
           prop="id">
         </el-table-column>
-
         <el-table-column
-          label="name"
+          label="Name"
           sortable
           prop="name">
         </el-table-column>
-
         <el-table-column
-          label="price"
+          label="Expires date"
+          sortable
+          prop="expires">
+        </el-table-column>
+        <el-table-column
+          label="Price"
           sortable
           prop="price">
         </el-table-column>
 
-        <el-table-column
-          align="right">
+        <el-table-column align="right">
           <template slot="header" slot-scope="scope">
             <el-input
               v-model="search"
@@ -40,10 +92,9 @@
             <el-button
               size="mini"
               type="danger"
-              @click="delArticle(scope.row.id)"
+              @click="delArticleAction(scope.row.id)"
               >Delete</el-button>
           </template>
-          
         </el-table-column>
       </el-table>
 
@@ -94,20 +145,39 @@
             this.$refs.singleTable.setCurrentRow(row);
           },
           handleCurrentChange(val) {
-            console.log("val----",val)
             this.currentRow = val;
             this.showSelectArticle(val)
           },
-          ...mapMutations(['delArticle','showSelectArticle','toggleDialogForm']),
-          ...mapActions(['setAlAction'])
+          ...mapMutations(['showSelectArticle','toggleDialogForm']),
+          ...mapActions(['setAlAction','delArticleAction'])
         },
         created(){
-          //this.setAlAction()
+          this.setAlAction()
         },
         store
     }
 </script>
 
 <style scoped>
+
+  .demo-table-expand-left {
+    font-size: 0;
+  }
+
+  .demo-table-expand-right {
+    font-size: 0;
+    padding-left: 50px;
+    border-left: 1px dashed #99a9bf;
+  }
+  .demo-table-expand-left label {
+    width: 90px;
+    color: #99a9bf;
+    font-weight: bold;
+  }
+  .demo-table-expand-left .el-form-item {
+    margin-right: 0;
+    margin-bottom: 0;
+    width: 50%;
+  }
 
 </style>

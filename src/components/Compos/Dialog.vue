@@ -41,7 +41,7 @@
 
         <div slot="footer" class="dialog-footer">
             <el-button @click="toggleDialogForm">Cancel</el-button>
-            <el-button v-show="formMode===''" type="primary" @click="createArticleAction(form)">Create</el-button>
+            <el-button v-show="formMode===''" type="primary" @click="handleCreate(form)">Create</el-button>
         </div>
 
     </el-dialog>
@@ -62,6 +62,10 @@
           ...mapState(['articleList','dialogFormVisible'])
         },
         methods: {
+          handleCreate(form){
+            this.createArticleAction(form);
+            this.toggleDialogForm()
+          },
           ...mapMutations(['toggleDialogForm']),
           ...mapActions(['createArticleAction'])
         },

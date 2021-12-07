@@ -82,8 +82,22 @@ const store = new Vuex.Store({
         method:"POST",
         data:postArticleObj,
       }).then(res=>{
-          console.log("post res***",res)
+          console.log("POST res***",res)
           if(res.status==201){
+            dispatch('setAlAction')
+          }
+      }).catch(err=>{
+          console.log(err)
+      })
+    },
+
+    delArticleAction: ({dispatch},id) => {
+      axios({
+        url:apiUrl+'/'+id,
+        method:"DELETE",
+      }).then(res=>{
+          console.log("DELETE res***",res)
+          if(res.status==200){
             dispatch('setAlAction')
           }
       }).catch(err=>{

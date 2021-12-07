@@ -23,7 +23,6 @@
     .main{
       float:left;
       width:100%;
-      background-color: rgb(233, 233, 233);
       height: 100%;
     }
 </style>
