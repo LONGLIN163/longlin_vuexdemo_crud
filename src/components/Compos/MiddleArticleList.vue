@@ -110,7 +110,7 @@
       ></Dialog>
       
       <el-header style="text-align: center; font-size: 12px; margin-top: 16px;">
-        <el-button type="primary" round @click="toggleDialogForm">Create Article</el-button>
+        <el-button id="createBtn" type="primary" round @click="toggleDialogForm">Create Article</el-button>
       </el-header>
       
     </el-main>

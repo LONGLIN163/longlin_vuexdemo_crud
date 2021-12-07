@@ -20,7 +20,12 @@ npm run build --report
 # run unit tests
 npm run unit
 
-# run all tests
+# run all tests with coverage
+"unit": "jest --config test/unit/jest.conf.js --coverage",
+npm test
+
+# run all tests with watch
+"unit": "jest --config test/unit/jest.conf.js --watch",
 npm test
 ```
 

@@ -1,5 +1,6 @@
 <template>
-    <el-aside width="200px" style="background-color: rgb(238, 241, 246)" v-if="!reFresh">
+    <el-aside width="200px" v-if="!reFresh">
+      <div id="tasteTypes">Flavours</div>
       <el-menu 
         :default-active="activeType" 
         class="el-menu-demo" 
@@ -19,7 +20,6 @@
         data() {
           return {
             activeType:'0',
-            //reFresh:true,
             menuTree:[]
           }
         },
@@ -30,17 +30,9 @@
           this.setArticleListlAction()
         },
         watch:{
-            //  menuTree(){
- 
-            //       this.reFresh= false
-            //       this.$nextTick(()=>{
-                    
-            //         this.reFresh = true
-            //     })
-            // }
           'reFresh':function(newVal,oldVal){
-            console.log('newVal****',newVal)
-            console.log('oldVal****',oldVal)
+            //console.log('newVal****',newVal)
+            //console.log('oldVal****',oldVal)
             if(newVal){
               this.ToogleRefreshCompo(true)          
               this.$nextTick(()=>{   
@@ -51,17 +43,13 @@
         },
         methods:{
           handleSelect(key) {
-            console.log("key---",key);
+            //console.log("key---",key);
             if(key==='0'){
               this.resetFilteredList()
             }else{
               this.getListByType(this.types[key-1])
             }
           },
-          // reload() {
-          //   console.log("update*************")
-          //   this.$forceUpdate()
-          // },
           ...mapMutations(['getListByType','resetFilteredList','ToogleRefreshCompo']),
           ...mapActions(['setArticleListlAction'])
         },
@@ -72,5 +60,11 @@
 <style scoped>
   .el-aside {
     color: #333;
+    
+  }
+  #tasteTypes{
+    margin-top:40px ;
+    color: #909399;
+    font-weight: bold;
   }
 </style>
