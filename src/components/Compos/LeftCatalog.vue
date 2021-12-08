@@ -57,14 +57,22 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .el-aside {
-    color: #333;
+    color: $color-font-defalt;
     
   }
   #tasteTypes{
     margin-top:40px ;
-    color: #909399;
+    color: $color-font-defalt;
     font-weight: bold;
   }
+
+
+  .is-active{
+    color: $color-hint !important ;
+    font-weight: bold;
+  }
+
+    
 </style>

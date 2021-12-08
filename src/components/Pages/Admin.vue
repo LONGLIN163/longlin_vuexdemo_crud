@@ -29,9 +29,9 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .el-header, .el-footer {
-    background-color: #1c9797;
+    background-color: $color-primary;
     color: #fff;
     text-align: center;
     line-height: 60px;

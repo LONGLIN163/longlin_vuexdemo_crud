@@ -95,7 +95,7 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     .colorTxt{
         height: 40px;
         line-height: 40px;
@@ -105,6 +105,10 @@
         display: flex;
         flex-direction: row;
         align-items: flex-start
+    }
+    #createArticleBtn{
+        background-color: $color-primary;
+        border: none;
     }
 
 </style>

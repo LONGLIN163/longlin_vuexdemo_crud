@@ -163,7 +163,7 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
   .demo-table-expand-left {
     padding-left: 50px;
@@ -171,11 +171,11 @@
 
   .demo-table-expand-right {
     padding-left: 50px;
-    border-left: 1px dashed #99a9bf;
+    border-left: 1px dashed $color-font-defalt;
   }
   .demo-table-expand-left label {
     width: 90px;
-    color: #99a9bf;
+    color: $color-font-defalt;
     font-weight: bold;
   }
   .demo-table-expand-left .el-form-item {
@@ -183,5 +183,16 @@
     margin-bottom: 0;
     width: 100%;
   }
+
+  #createBtn{
+    background-color: $color-primary;
+    border: none;
+  }
+
+  .descending{
+    border-top-color: $color-hint !important;
+  }
+    
+
 
 </style>
