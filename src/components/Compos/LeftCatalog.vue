@@ -31,8 +31,6 @@
         },
         watch:{
           'reFresh':function(newVal,oldVal){
-            //console.log('newVal****',newVal)
-            //console.log('oldVal****',oldVal)
             if(newVal){
               this.ToogleRefreshCompo(true)          
               this.$nextTick(()=>{   
@@ -43,7 +41,6 @@
         },
         methods:{
           handleSelect(key) {
-            //console.log("key---",key);
             if(key==='0'){
               this.resetFilteredList()
             }else{

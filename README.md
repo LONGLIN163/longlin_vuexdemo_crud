@@ -1,32 +1,25 @@
 # longlin_vuexdemo_crud
 
->  CRUD demo base on vuex...crud demo base on vuex
+### Description
 
-## Build Setup
+This is an vuex+vue demo.It includes CRD(Create, Read, Update and Delete) 3 function, and they are integrated into different part of the application.
+The left nav bar is an Additional design, It doesn't have a real "api request", I only simulate a function of "fetch data by type".
+
+### Quick Setup
 
 ``` bash
 # install dependencies
 npm install
 
+# start api server
+npm run api
+
 # serve with hot reload at localhost:8080
-npm run dev
+npm start
+
+# run test
+npm test
 
 # build for production with minification
 npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run all tests with coverage
-"unit": "jest --config test/unit/jest.conf.js --coverage",
-npm test
-
-# run all tests with watch
-"unit": "jest --config test/unit/jest.conf.js --watch",
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

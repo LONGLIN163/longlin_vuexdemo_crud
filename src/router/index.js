@@ -11,11 +11,6 @@ export default new Router({
       path: '/',
       name: 'Admin',
       component: Admin,
-    },
-    // {
-    //   path: '/Article',
-    //   name: 'Article',
-    //   component: Article,
-    // }
+    }
   ]
 })
