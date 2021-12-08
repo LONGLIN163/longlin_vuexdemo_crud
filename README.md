@@ -1,32 +1,31 @@
-# longlin_vuexdemo_crud
+### Your name
 
-### Description
+Long Lin
 
-This is an vuex+vue demo. It includes CRD(Create, Read, Update and Delete) 3 function, and they are integrated into different part of the application.
-The left nav bar is an Additional design, It doesn't have a real "api request", I only simulate a function of "fetch data by type".
+### What was challenging?
 
-**Some thing need to know:**
+1.I made a little trouble for myself(left nav bar function,change a lot times ui and more);
+2.Testing, I just learned it;
 
-(1) Everytime you restart api server, it will generate new "fruit data", but this application will automatically filter it.
+### What did you enjoy doing?
 
-(2) If you delete a fruit from a filtered(nav) table, The nav bar will be set to "All", it is designed.
+Everything, even testing.
 
+### If you had more time, what would you improve/do differently?
 
-### Quick Setup
+1. I will encapsulate an apis.js to handle all of the Http Request.
 
-``` bash
-# install dependencies
-npm install
+2. I will separate mutations and actions...
 
-# start api server
-npm run api
+### How much time (more or less) it took you to complete the task?
+Two days, I didnt code with vue for a little long time.
 
-# serve with hot reload at localhost:8080
-npm start
+### What do you think about the task itself? (Was it a good experience? If not why?)
 
-# run test
-npm test
+The task itself is awsome, there's nothing to tell.
 
-# build for production with minification
-npm run build
+### Summary as a gif
+<!-- Show us a gif that represents how you feel about this test, as a whole. -->
+This test covers different aspects, it is a good practice, and it is neither big nor small.
 
+<!-- We don't need you to create a gif showing the project you made. -->
