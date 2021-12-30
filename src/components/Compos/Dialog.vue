@@ -70,7 +70,7 @@
 </template>
 
 <script>
-    import store  from '@/vuex/store'
+    //import store  from '@/vuex/store'
     import {mapState,mapMutations,mapActions} from 'vuex'
 
     export default {
@@ -91,7 +91,7 @@
           ...mapMutations(['toggleDialogForm']),
           ...mapActions(['createArticleAction'])
         },
-        store
+        //store
     }
 </script>
 
