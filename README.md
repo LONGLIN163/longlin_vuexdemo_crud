@@ -23,7 +23,7 @@ npm install
 npm run api
 
 # serve with hot reload at localhost:8080
-npm start
+npm run serve
 
 # run test
 npm test
