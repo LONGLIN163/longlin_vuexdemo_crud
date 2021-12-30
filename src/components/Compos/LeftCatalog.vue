@@ -14,8 +14,9 @@
 </template>
 
 <script>
-    //import store  from '@/vuex/store'
+
     import {mapState,mapMutations,mapActions} from 'vuex'
+    
     export default {
         data() {
           return {
@@ -49,8 +50,7 @@
           },
           ...mapMutations(['getListByType','resetFilteredList','ToogleRefreshCompo']),
           ...mapActions(['setArticleListlAction'])
-        },
-        //store
+        }
     }
 </script>
 

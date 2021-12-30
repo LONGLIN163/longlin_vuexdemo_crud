@@ -5,10 +5,6 @@
 
             <h1 id="productinfo">Product info</h1>
 
-            <!-- <el-form-item v-if="formMode==='edit'" label="id" :label-width="formLabelWidth">
-                <el-input v-model="form.id" autocomplete="off" disabled></el-input>
-            </el-form-item> -->
-
             <el-form-item label="name" :label-width="formLabelWidth">
                 <el-input id="aname" v-model="form.name" autocomplete="off"></el-input>
             </el-form-item>
@@ -70,7 +66,7 @@
 </template>
 
 <script>
-    //import store  from '@/vuex/store'
+
     import {mapState,mapMutations,mapActions} from 'vuex'
 
     export default {
@@ -90,8 +86,7 @@
           },
           ...mapMutations(['toggleDialogForm']),
           ...mapActions(['createArticleAction'])
-        },
-        //store
+        }
     }
 </script>
 
