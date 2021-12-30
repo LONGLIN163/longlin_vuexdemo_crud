@@ -1,16 +1,21 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter from 'vue-router'
 import Admin from '@/components/Pages/Admin'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
+const routes = [
+  {
+    path: '/',
+    name: 'Admin',
+    component: Admin
+  }
+]
 
-  routes: [
-    {
-      path: '/',
-      name: 'Admin',
-      component: Admin,
-    }
-  ]
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
 })
+
+export default router

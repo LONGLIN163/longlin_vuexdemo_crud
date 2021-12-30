@@ -121,7 +121,7 @@
 </template>
 
 <script>
-    import store  from '@/vuex/store'
+    //import store  from '@/vuex/store'
     import Dialog  from '@/components/Compos/Dialog.vue'
     import {mapState,mapMutations, mapActions} from 'vuex'
 
@@ -159,7 +159,7 @@
           ...mapMutations(['showSelectArticle','toggleDialogForm']),
           ...mapActions(['setArticleListlAction','delArticleAction'])
         },
-        store
+        //store
     }
 </script>
 
