@@ -113,7 +113,7 @@
       ></Dialog>
       
       <el-header style="text-align: center; font-size: 12px; margin-top: 16px;">
-        <el-button id="createBtn" type="primary" round @click="toggleDialogForm">Create Article</el-button>
+        <el-button id="createBtn" type="primary" round @click="TOOGLE_DIALOGFORM">Create Article</el-button>
       </el-header>
       
     </el-main>
@@ -154,9 +154,9 @@
           },
           handleCurrentChange(val) {
             this.currentRow = val;
-            this.showSelectArticle(val)
+            this.SHOW_SELECTED_ARTICLE(val)
           },
-          ...mapMutations(['showSelectArticle','toggleDialogForm']),
+          ...mapMutations(['SHOW_SELECTED_ARTICLE','TOOGLE_DIALOGFORM']),
           ...mapActions(['setArticleListAction','delArticleAction'])
         }
     }

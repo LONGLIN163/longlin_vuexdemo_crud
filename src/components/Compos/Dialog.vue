@@ -1,5 +1,5 @@
 <template>
-    <el-dialog :visible="dialogFormVisible" @close='toggleDialogForm'>
+    <el-dialog :visible="dialogFormVisible" @close='TOOGLE_DIALOGFORM'>
 
         <el-form :model="form">
 
@@ -58,7 +58,7 @@
         </el-form>
 
         <div slot="footer" class="dialog-footer">
-            <el-button id="cancelCreateBtn" @click="toggleDialogForm">Cancel</el-button>
+            <el-button id="cancelCreateBtn" @click="TOOGLE_DIALOGFORM">Cancel</el-button>
             <el-button id="createArticleBtn" v-show="formMode===''" type="primary" @click="handleCreate(form)">Create</el-button>
         </div>
 
@@ -82,9 +82,9 @@
         methods: {
           handleCreate(form){
             this.createArticleAction(form);
-            this.toggleDialogForm()
+            this.TOOGLE_DIALOGFORM()
           },
-          ...mapMutations(['toggleDialogForm']),
+          ...mapMutations(['TOOGLE_DIALOGFORM']),
           ...mapActions(['createArticleAction'])
         }
     }

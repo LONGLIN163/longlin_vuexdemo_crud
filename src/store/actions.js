@@ -9,8 +9,8 @@ export const setArticleListAction = ({commit})=>{
         json:res.data.data,
         path:'$..[?(@.isFruit&&@.name)]'
       })
-        commit('getArticleList',objArr) 
-        commit('getTypes') 
+        commit('GET_ARTICLELIST',objArr) 
+        commit('GET_TYPES') 
     }
   }).catch(err=>{
       console.log(err)
@@ -32,7 +32,7 @@ export const delArticleAction = ({dispatch,commit},id) => {
     Article.deleteArticleData(id).then(res=>{
         if(res.status==200){
           dispatch('setArticleListAction')
-          commit('ToogleRefreshCompo',true)
+          commit('TOOGLE_REFRESHCOMPO',true)
         }
     }).catch(err=>{
         console.log(err)

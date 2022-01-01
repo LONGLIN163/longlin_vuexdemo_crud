@@ -33,9 +33,9 @@
         watch:{
           'reFresh':function(newVal,oldVal){
             if(newVal){
-              this.ToogleRefreshCompo(true)          
+              this.TOOGLE_REFRESHCOMPO(true)          
               this.$nextTick(()=>{   
-                 this.ToogleRefreshCompo(false)   
+                 this.TOOGLE_REFRESHCOMPO(false)   
               })
             }
           }
@@ -43,12 +43,12 @@
         methods:{
           handleSelect(key) {
             if(key==='0'){
-              this.resetFilteredList()
+              this.RESET_FILTEREDLIST()
             }else{
-              this.getListByType(this.types[key-1])
+              this.GET_LIST_BYTYPE(this.types[key-1])
             }
           },
-          ...mapMutations(['getListByType','resetFilteredList','ToogleRefreshCompo']),
+          ...mapMutations(['GET_LIST_BYTYPE','RESET_FILTEREDLIST','TOOGLE_REFRESHCOMPO']),
           ...mapActions(['setArticleListAction'])
         }
     }
