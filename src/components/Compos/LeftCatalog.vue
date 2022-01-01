@@ -28,7 +28,7 @@
           ...mapState(['types','reFresh'])
         },
         created(){
-          this.setArticleListlAction()
+          this.setArticleListAction()
         },
         watch:{
           'reFresh':function(newVal,oldVal){
@@ -49,7 +49,7 @@
             }
           },
           ...mapMutations(['getListByType','resetFilteredList','ToogleRefreshCompo']),
-          ...mapActions(['setArticleListlAction'])
+          ...mapActions(['setArticleListAction'])
         }
     }
 </script>

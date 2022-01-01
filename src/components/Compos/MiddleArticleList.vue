@@ -157,7 +157,7 @@
             this.showSelectArticle(val)
           },
           ...mapMutations(['showSelectArticle','toggleDialogForm']),
-          ...mapActions(['setArticleListlAction','delArticleAction'])
+          ...mapActions(['setArticleListAction','delArticleAction'])
         }
     }
 </script>

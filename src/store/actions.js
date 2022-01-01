@@ -1,46 +1,37 @@
-import axios from "axios"
 import JSONPath from "JSONPath"
-let apiUrl="http://localhost:3000/fruit";
+import Article from "../apis/Article";
 
-export const setArticleListlAction = ({commit})=>{
-    axios({
-        url:apiUrl,
-        method:"GET",
-    }).then(res=>{
-        if(res.status==200){
-          const objArr=JSONPath({
-            json:res.data.data,
-            path:'$..[?(@.isFruit&&@.name)]'
-          })
-           commit('getArticleList',objArr) 
-           commit('getTypes') 
-        }
-    }).catch(err=>{
-        console.log(err)
-    })
+export const setArticleListAction = ({commit})=>{
+  Article.getArticleData()
+  .then(res=>{
+    if(res.status==200){
+      const objArr=JSONPath({
+        json:res.data.data,
+        path:'$..[?(@.isFruit&&@.name)]'
+      })
+        commit('getArticleList',objArr) 
+        commit('getTypes') 
+    }
+  }).catch(err=>{
+      console.log(err)
+  })
 }
 
-export const createArticleAction = ({dispatch},postArticleObj) => {
-    axios({
-      url:apiUrl,
-      method:"POST",
-      data:postArticleObj,
-    }).then(res=>{
-        if(res.status==201){
-          dispatch('setArticleListlAction')
-        }
-    }).catch(err=>{
+export const createArticleAction = ({dispatch},aobj) => {
+  Article.postArticleData(aobj)
+  .then(res=>{
+    if(res.status==201){
+      dispatch('setArticleListAction')
+    }
+  }).catch(err=>{
         console.log(err)
-    })
+  })
 }
 
 export const delArticleAction = ({dispatch,commit},id) => {
-    axios({
-      url:apiUrl+'/'+id,
-      method:"DELETE",
-    }).then(res=>{
+    Article.deleteArticleData(id).then(res=>{
         if(res.status==200){
-          dispatch('setArticleListlAction')
+          dispatch('setArticleListAction')
           commit('ToogleRefreshCompo',true)
         }
     }).catch(err=>{
