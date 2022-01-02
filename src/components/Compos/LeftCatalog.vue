@@ -8,7 +8,7 @@
         @select="handleSelect"
       >
           <el-menu-item index='0' :key="0">All</el-menu-item>
-          <el-menu-item v-for="(item,index) in types" :index="(index+1).toString()" :key="item+index">{{item}}</el-menu-item>
+          <el-menu-item data-test="leftNav" v-for="(item,index) in types" :index="(index+1).toString()" :key="item+index">{{item}}</el-menu-item>
       </el-menu>
     </el-aside>
 </template>

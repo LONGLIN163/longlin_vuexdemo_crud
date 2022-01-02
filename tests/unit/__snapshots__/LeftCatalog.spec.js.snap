@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component LeftCatalog tests: Get LeftCatalog snapshot and check init action has been called 1`] = `
+<aside class="el-aside" style="width: 200px;">
+  <div id="tasteTypes">Flavours</div>
+  <transition-stub mode="out-in" class="el-menu-demo">
+    <ul role="menubar" class="el-menu">
+      <li role="menuitem" tabindex="-1" class="el-menu-item is-active" style="padding-left: 20px;">All</li>
+      <li role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left: 20px;" data-test="leftNav">Refined</li>
+      <li role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left: 20px;" data-test="leftNav">Unbranded</li>
+      <li role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left: 20px;" data-test="leftNav">Licensed</li>
+      <li role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left: 20px;" data-test="leftNav">Small</li>
+      <li role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left: 20px;" data-test="leftNav">Sleek</li>
+      <li role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left: 20px;" data-test="leftNav">Awesome</li>
+    </ul>
+  </transition-stub>
+</aside>
+`;
