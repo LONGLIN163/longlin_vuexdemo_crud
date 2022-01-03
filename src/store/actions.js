@@ -41,7 +41,7 @@ export const delArticleAction = async ({dispatch,commit},id) => {
     })
 }
 
-//*********************************************************
+//************************version sin async/await*********************************
 // export const setArticleListAction = ({commit})=>{
 //   Article.getArticleData()
 //   .then(res=>{
