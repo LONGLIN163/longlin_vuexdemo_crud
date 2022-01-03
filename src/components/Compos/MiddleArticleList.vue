@@ -8,55 +8,54 @@
       >
         <el-table-column type="expand">
           <template slot-scope="props">
-          <el-row :gutter="20">
-            <el-col :span="12">
-              <div class="grid-content bg-purple">
-                <el-form label-position="left" inline class="demo-table-expand-left" >
-                  <el-form-item label="ID:">
-                    <span>{{ props.row.id }}</span>
-                  </el-form-item>
-                  <el-form-item label="Name:">
-                    <span>{{ props.row.name }}</span>
-                  </el-form-item>
-                  <el-form-item label="Taste:">
-                    <span>{{ props.row.taste }}</span>
-                  </el-form-item>
-                  <el-form-item label="Color:">
-                    <span>{{ props.row.color }}</span>
-                  </el-form-item>
-                  <el-form-item label="Expires date:">
-                    <span>{{ props.row.expires }}</span>
-                  </el-form-item>
-                  <el-form-item label="Price:">
-                    <span>{{ props.row.price }}</span>
-                  </el-form-item>
+            <el-row :gutter="20">
+              <el-col :span="12">
+                <div class="grid-content bg-purple">
+                  <el-form label-position="left" inline class="demo-table-expand-left" >
+                    <el-form-item label="ID:">
+                      <span>{{ props.row.id }}</span>
+                    </el-form-item>
+                    <el-form-item label="Name:">
+                      <span>{{ props.row.name }}</span>
+                    </el-form-item>
+                    <el-form-item label="Taste:">
+                      <span>{{ props.row.taste }}</span>
+                    </el-form-item>
+                    <el-form-item label="Color:">
+                      <span>{{ props.row.color }}</span>
+                    </el-form-item>
+                    <el-form-item label="Expires date:">
+                      <span>{{ props.row.expires }}</span>
+                    </el-form-item>
+                    <el-form-item label="Price:">
+                      <span>{{ props.row.price }}</span>
+                    </el-form-item>
 
-                 <el-button 
-                    size="mini" 
-                    type="danger" 
-                    @click="delArticleAction(props.row.id)"
-                  >Delete</el-button>
+                  <el-button 
+                      size="mini" 
+                      type="danger" 
+                      data-test="delArticleOnTable"
+                      @click="delArticleAction(props.row.id)"
+                    >Delete</el-button>
 
-                </el-form>
-              </div>
-            </el-col>
-            <el-col :span="12">
-              <div class="grid-content bg-purple">
-                <el-form label-position="left" inline class="demo-table-expand-right" >
-                  <el-form-item label="Image:">
-                    <span>
-                      <el-image 
-                        style="width: 400px;"
-                        :src="props.row.image"
-                      ></el-image>
-                    </span>
-                  </el-form-item>
-                </el-form>
-              </div>
-            </el-col>
-          </el-row>
-
-
+                  </el-form>
+                </div>
+              </el-col>
+              <el-col :span="12">
+                <div class="grid-content bg-purple">
+                  <el-form label-position="left" inline class="demo-table-expand-right" >
+                    <el-form-item label="Image:">
+                      <span>
+                        <el-image 
+                          style="width: 400px;"
+                          :src="props.row.image"
+                        ></el-image>
+                      </span>
+                    </el-form-item>
+                  </el-form>
+                </div>
+              </el-col>
+            </el-row>
           </template>
         </el-table-column>
 
@@ -100,6 +99,7 @@
             <el-button
               size="mini"
               type="danger"
+              data-test="delArticle"
               @click="delArticleAction(scope.row.id)"
               >Delete</el-button>
           </template>
@@ -146,18 +146,11 @@
           Dialog
         },
         computed:{
-          ...mapState(['articleList','dialogFormVisible','filteredList'])
+          ...mapState(['dialogFormVisible','filteredList'])
         },
         methods: {
-          setCurrent(row) {
-            this.$refs.singleTable.setCurrentRow(row);
-          },
-          handleCurrentChange(val) {
-            this.currentRow = val;
-            this.SHOW_SELECTED_ARTICLE(val)
-          },
           ...mapMutations(['SHOW_SELECTED_ARTICLE','TOOGLE_DIALOGFORM']),
-          ...mapActions(['setArticleListAction','delArticleAction'])
+          ...mapActions(['delArticleAction'])
         }
     }
 </script>

@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component MiddleArticleList tests: Get MiddleArticleList snapshot 1`] = `
+<section class="el-container">
+  <main class="el-main">
+    <div class="el-table el-table--fit el-table--scrollable-x el-table--enable-row-hover el-table--enable-row-transition" style="width: 100%;">
+      <div class="hidden-columns">
+        <div></div>
+        <div></div>
+        <div title="name" id="name"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="el-table__header-wrapper">
+        <table cellspacing="0" cellpadding="0" border="0" class="el-table__header" style="width: 528px;">
+          <colgroup>
+            <col name="el-table_1_column_1" width="48">
+            <col name="el-table_1_column_2" width="80">
+            <col name="el-table_1_column_3" width="80">
+            <col name="el-table_1_column_4" width="80">
+            <col name="el-table_1_column_5" width="80">
+            <col name="el-table_1_column_6" width="80">
+            <col name="el-table_1_column_7" width="80">
+          </colgroup>
+          <thead class="">
+            <tr class="">
+              <th colspan="1" rowspan="1" class="el-table_1_column_1   undefined el-table__expand-column  is-leaf el-table__cell">
+                <div class="cell"></div>
+              </th>
+              <th colspan="1" rowspan="1" class="el-table_1_column_2 descending    is-leaf is-sortable el-table__cell">
+                <div class="cell">Article ID<span class="caret-wrapper"><i class="sort-caret ascending"></i><i class="sort-caret descending"></i></span></div>
+              </th>
+              <th colspan="1" rowspan="1" class="el-table_1_column_3     is-leaf is-sortable el-table__cell">
+                <div class="cell">Name<span class="caret-wrapper"><i class="sort-caret ascending"></i><i class="sort-caret descending"></i></span></div>
+              </th>
+              <th colspan="1" rowspan="1" class="el-table_1_column_4     is-leaf is-sortable el-table__cell">
+                <div class="cell">Taste<span class="caret-wrapper"><i class="sort-caret ascending"></i><i class="sort-caret descending"></i></span></div>
+              </th>
+              <th colspan="1" rowspan="1" class="el-table_1_column_5     is-leaf is-sortable el-table__cell">
+                <div class="cell">Expires date<span class="caret-wrapper"><i class="sort-caret ascending"></i><i class="sort-caret descending"></i></span></div>
+              </th>
+              <th colspan="1" rowspan="1" class="el-table_1_column_6     is-leaf is-sortable el-table__cell">
+                <div class="cell">Price<span class="caret-wrapper"><i class="sort-caret ascending"></i><i class="sort-caret descending"></i></span></div>
+              </th>
+              <th colspan="1" rowspan="1" class="el-table_1_column_7  is-right   is-leaf el-table__cell">
+                <div class="cell">
+                  <div class="el-input el-input--mini">
+                    <!----><input type="text" autocomplete="off" placeholder="search..." class="el-input__inner">
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                  </div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div class="el-table__body-wrapper is-scrolling-left">
+        <table cellspacing="0" cellpadding="0" border="0" class="el-table__body" style="width: 528px;">
+          <colgroup>
+            <col name="el-table_1_column_1" width="48">
+            <col name="el-table_1_column_2" width="80">
+            <col name="el-table_1_column_3" width="80">
+            <col name="el-table_1_column_4" width="80">
+            <col name="el-table_1_column_5" width="80">
+            <col name="el-table_1_column_6" width="80">
+            <col name="el-table_1_column_7" width="80">
+          </colgroup>
+          <tbody>
+            <tr class="el-table__row">
+              <td rowspan="1" colspan="1" class="el-table_1_column_1  undefined el-table__expand-column el-table__cell">
+                <div class="cell">
+                  <div class="el-table__expand-icon"><i class="el-icon el-icon-arrow-right"></i></div>
+                </div>
+              </td>
+              <td rowspan="1" colspan="1" class="el-table_1_column_2   el-table__cell">
+                <div class="cell">5</div>
+              </td>
+              <td rowspan="1" colspan="1" class="el-table_1_column_3   el-table__cell">
+                <div class="cell">apple</div>
+              </td>
+              <td rowspan="1" colspan="1" class="el-table_1_column_4   el-table__cell">
+                <div class="cell">Sleek</div>
+              </td>
+              <td rowspan="1" colspan="1" class="el-table_1_column_5   el-table__cell">
+                <div class="cell">2021-06-09T19:05:55.250Z</div>
+              </td>
+              <td rowspan="1" colspan="1" class="el-table_1_column_6   el-table__cell">
+                <div class="cell">419.00</div>
+              </td>
+              <td rowspan="1" colspan="1" class="el-table_1_column_7 is-right  el-table__cell">
+                <div class="cell"><button type="button" class="el-button el-button--danger el-button--mini" data-test="delArticle">
+                    <!---->
+                    <!----><span>Delete</span>
+                  </button></div>
+              </td>
+            </tr>
+            <tr class="el-table__row">
+              <td rowspan="1" colspan="1" class="el-table_1_column_1  undefined el-table__expand-column el-table__cell">
+                <div class="cell">
+                  <div class="el-table__expand-icon"><i class="el-icon el-icon-arrow-right"></i></div>
+                </div>
+              </td>
+              <td rowspan="1" colspan="1" class="el-table_1_column_2   el-table__cell">
+                <div class="cell">1</div>
+              </td>
+              <td rowspan="1" colspan="1" class="el-table_1_column_3   el-table__cell">
+                <div class="cell">pineapple</div>
+              </td>
+              <td rowspan="1" colspan="1" class="el-table_1_column_4   el-table__cell">
+                <div class="cell">Awesome</div>
+              </td>
+              <td rowspan="1" colspan="1" class="el-table_1_column_5   el-table__cell">
+                <div class="cell">2022-10-13T19:10:51.621Z</div>
+              </td>
+              <td rowspan="1" colspan="1" class="el-table_1_column_6   el-table__cell">
+                <div class="cell">346.00</div>
+              </td>
+              <td rowspan="1" colspan="1" class="el-table_1_column_7 is-right  el-table__cell">
+                <div class="cell"><button type="button" class="el-button el-button--danger el-button--mini" data-test="delArticle">
+                    <!---->
+                    <!----><span>Delete</span>
+                  </button></div>
+              </td>
+            </tr>
+            <!---->
+          </tbody>
+        </table>
+        <!---->
+        <!---->
+      </div>
+      <!---->
+      <!---->
+      <!---->
+      <!---->
+      <div class="el-table__column-resize-proxy" style="display: none;"></div>
+    </div>
+    <!---->
+    <header class="el-header" style="height: 60px; text-align: center; font-size: 12px; margin-top: 16px;"><button type="button" class="el-button el-button--primary is-round" id="createBtn">
+        <!---->
+        <!----><span>Create Article</span>
+      </button></header>
+  </main>
+</section>
+`;

@@ -1,8 +1,8 @@
 import { mount,createLocalVue} from '@vue/test-utils'
 import LeftCatalog from '@/components/Compos/LeftCatalog'
 import Vuex from 'vuex'
-
 import ElementUI from "element-ui"
+import {mockTypes} from '../mockedData'
 
 const localVue = createLocalVue();
 localVue.use(ElementUI);  // install ElementUI to the local vue instance
@@ -22,8 +22,6 @@ describe('Component LeftCatalog tests:', () => {
   })
 
   beforeEach(() => {
-
-    const mockTypes=["Refined", "Unbranded", "Licensed", "Small", "Sleek", "Awesome"]
 
     // mock actions
     actions = {
