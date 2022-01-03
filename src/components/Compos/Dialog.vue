@@ -6,31 +6,30 @@
             <h1 id="productinfo">Product info</h1>
 
             <el-form-item label="name" :label-width="formLabelWidth">
-                <el-input id="aname" v-model="form.name" autocomplete="off"></el-input>
+                <el-input data-test="dialog_name" id="aname" v-model="form.name" autocomplete="off"></el-input>
             </el-form-item>
 
             <el-form-item label="description" :label-width="formLabelWidth">
-                <el-input v-model="form.description" autocomplete="off"></el-input>
+                <el-input data-test="dialog_description" v-model="form.description" autocomplete="off"></el-input>
             </el-form-item>
 
 
-            <el-form-item label="taste" :label-width="formLabelWidth">
+            <el-form-item  data-test="taste" label="taste" :label-width="formLabelWidth">
                 <el-select v-model="form.taste" placeholder="please select" style="width: 100%;">
                     <el-option
+                     data-test="dialog_type"
                     v-for="item in types"
                     :key="item"
                     :label="item"
                     :value="item">
                     </el-option>
                 </el-select>
-
             </el-form-item>
 
-
-            <el-form-item label="color" :label-width="formLabelWidth">
+            <el-form-item data-test="dialog_color" label="color" :label-width="formLabelWidth">
                 <div class="colorBox">
                     <el-color-picker v-model="form.color"></el-color-picker>
-                    <div class="colorTxt">{{form.color}}</div>
+                    <div data-test="colorTxt" class="colorTxt">{{form.color}}</div>
                 </div>
             </el-form-item>
 
@@ -38,8 +37,7 @@
                 <el-input v-model="form.image" autocomplete="off"></el-input>
             </el-form-item>
 
-
-            <el-form-item label="expires" :label-width="formLabelWidth">
+            <el-form-item data-test="dialog_date" label="expires" :label-width="formLabelWidth">
                 
                     <el-date-picker
                         v-model="form.expires"
