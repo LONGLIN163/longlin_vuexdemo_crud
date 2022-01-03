@@ -149,7 +149,7 @@
           ...mapState(['dialogFormVisible','filteredList'])
         },
         methods: {
-          ...mapMutations(['SHOW_SELECTED_ARTICLE','TOOGLE_DIALOGFORM']),
+          ...mapMutations(['TOOGLE_DIALOGFORM']),
           ...mapActions(['delArticleAction'])
         }
     }

@@ -20,9 +20,6 @@ export const GET_LIST_BYTYPE=(state,typeString)=>{
 export const RESET_FILTEREDLIST=(state)=>{
     state.filteredList=state.articleList
 }
-export const SHOW_SELECTED_ARTICLE=(state,val)=>{
-    state.previewedProduct=val
-}
 
 export const TOOGLE_DIALOGFORM=(state)=>{
     state.dialogFormVisible=!state.dialogFormVisible

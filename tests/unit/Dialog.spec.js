@@ -110,8 +110,8 @@ describe('Component Dialog tests:', () => {
     expect(wrapper.find('[data-test="dialog_description"]').element.value).toBe('xixi')
 
     //test-type select field
-    //const typeSelect =await wrapper.find('[data-test="taste"] .el-select .el-input__inner').element.placeholder
-    //const typeSelect = wrapper.find('[data-test="taste"]>div>div>div>input').element.placeholder
+    //const typeSelect =await wrapper.find('[data-test="taste"] .el-select .el-input__inner').element.placeholder // ok
+    //const typeSelect = wrapper.find('[data-test="taste"]>div>div>div>input').element.placeholder // ok
     const typeSelect = wrapper.find('[data-test="taste"]>div>div>div>input')
     await typeSelect.trigger("click")
     const typeSelectItem = wrapper.findAll('[data-test="dialog_type"]').at(0)
@@ -129,7 +129,7 @@ describe('Component Dialog tests:', () => {
     //   // ***there is a bug, asyn+await would not work here, why???***
     //   const colorSelectedTxt = wrapper.find('[data-test="colorTxt"]')
     //   console.log("******",colorSelectedTxt.text())
-    //   expect(colorSelectedTxt.text()).toBe('#B86C6Csss')
+    //   expect(colorSelectedTxt.text()).toBe('#B86C6Csss') // not working too
     // })
 
     //test-date picker field
@@ -141,7 +141,7 @@ describe('Component Dialog tests:', () => {
     // })
 
     /**
-     * date picker and color picker will be tested in e2e
+     * date picker and color picker will be tested in e2e, there r bugs here
      * skip the rest form tests
      */
 
