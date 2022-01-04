@@ -44,7 +44,6 @@ describe('store tests:', () => {
 
   it('test action - setArticleListAction', async () => {
     const getArticleData = jest.spyOn(Article, 'getArticleData');
-    //Article.getArticleData.mockResolvedValue(resp)
     getArticleData.mockResolvedValue(resp)
 
     await store.dispatch("setArticleListAction")
