@@ -10,7 +10,7 @@ export const setArticleListAction = async ({commit})=>{
         json:res.data.data,
         path:'$..[?(@.isFruit&&@.name)]'
       })
-      console.log("objArr******",objArr)
+      //console.log("objArr******",objArr)
       await commit('GET_ARTICLELIST',objArr) 
       commit('GET_TYPES') 
     }

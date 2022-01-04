@@ -28,6 +28,7 @@
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/test-utils": "^1.0.3",
+    "flush-promises": "^1.0.2",
     "jest": "^27.4.5",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
